@@ -146,59 +146,63 @@ function IsCallAllowed(message)
 
     if msgLength == 0 then return false end
     if GetIsHandcuffed() then return false end
-    if Config.PhoneRequired and not HasPhone() then QBCore.Functions.Notify('You need a communications device for this.', 'error', 5000) return false end
+    if Config.PhoneRequired and not HasPhone() then QBCore.Functions.Notify('Du trenger en mobiltelefon for dette.', 'error', 5000) return false end
 
     return true
 end
 
 local weaponTable = {
-    [584646201]   = "CLASS 2: AP-Pistol",
-    [453432689]   = "CLASS 1: Pistol",
-    [3219281620]  = "CLASS 1: Pistol MK2",
-    [1593441988]  = "CLASS 1: Combat Pistol",
-    [-1716589765] = "CLASS 1: Heavy Pistol",
-    [-1076751822] = "CLASS 1: SNS-Pistol",
-    [-771403250]  = "CLASS 2: Desert Eagle",
-    [137902532]   = "CLASS 2: Vintage Pistol",
-    [-598887786]  = "CLASS 2: Marksman Pistol",
-    [-1045183535] = "CLASS 2: Revolver",
-    [911657153]   = "Taser",
-    [324215364]   = "CLASS 2: Micro-SMG",
-    [-619010992]  = "CLASS 2: Machine-Pistol",
-    [736523883]   = "CLASS 2: SMG",
-    [2024373456]  = "CLASS 2: SMG MK2",
-    [-270015777]  = "CLASS 2: Assault SMG",
-    [171789620]   = "CLASS 2: Combat PDW",
-    [-1660422300] = "CLASS 4: Combat MG",
-    [3686625920]  = "CLASS 4: Combat MG MK2",
-    [1627465347]  = "CLASS 4: Gusenberg",
-    [-1121678507] = "CLASS 2: Mini SMG",
-    [-1074790547] = "CLASS 3: Assaultrifle",
-    [961495388]   = "CLASS 3: Assaultrifle MK2",
-    [-2084633992] = "CLASS 3: Carbinerifle",
-    [4208062921]  = "CLASS 3: Carbinerifle MK2",
-    [-1357824103] = "CLASS 3: Advancedrifle",
-    [-1063057011] = "CLASS 3: Specialcarbine",
-    [2132975508]  = "CLASS 3: Bulluprifle",
-    [1649403952]  = "CLASS 3: Compactrifle",
-    [100416529]   = "CLASS 4: Sniperrifle",
-    [205991906]   = "CLASS 4: Heavy Sniper",
-    [177293209]   = "CLASS 4: Heavy Sniper MK2",
-    [-952879014]  = "CLASS 4: Marksmanrifle",
-    [487013001]   = "CLASS 2: Pumpshotgun",
-    [2017895192]  = "CLASS 2: Sawnoff Shotgun",
-    [-1654528753] = "CLASS 3: Bullupshotgun",
-    [-494615257]  = "CLASS 3: Assaultshotgun",
-    [-1466123874] = "CLASS 3: Musket",
-    [984333226]   = "CLASS 3: Heavyshotgun",
-    [-275439685]  = "CLASS 2: Doublebarrel Shotgun",
-    [317205821]   = "CLASS 2: Autoshotgun",
-    [-1568386805] = "CLASS 5: GRENADE LAUNCHER",
-    [-1312131151] = "CLASS 5: RPG",
-    [125959754]   = "CLASS 5: Compactlauncher"
+
+    [911657153]   = "VK 2: Elektrosjokkvåpen",
+    [453432689]   = "VK 2: 1911 Pistol",
+    [171789620]   = "VK 2: Combat PDW",
+
+    -- [584646201]   = "CLASS 2: AP-Pistol",
+    -- [3219281620]  = "CLASS 1: Pistol MK2",
+    -- [1593441988]  = "CLASS 1: Combat Pistol",
+    -- [-1716589765] = "CLASS 1: Heavy Pistol",
+    -- [-1076751822] = "CLASS 1: SNS-Pistol",
+    -- [-771403250]  = "CLASS 2: Desert Eagle",
+    -- [137902532]   = "CLASS 2: Vintage Pistol",
+    -- [-598887786]  = "CLASS 2: Marksman Pistol",
+    -- [-1045183535] = "CLASS 2: Revolver",
+    -- [911657153]   = "Taser",
+    -- [324215364]   = "CLASS 2: Micro-SMG",
+    -- [-619010992]  = "CLASS 2: Machine-Pistol",
+    -- [736523883]   = "CLASS 2: SMG",
+    -- [2024373456]  = "CLASS 2: SMG MK2",
+    -- [-270015777]  = "CLASS 2: Assault SMG",
+    -- [171789620]   = "CLASS 2: Combat PDW",
+    -- [-1660422300] = "CLASS 4: Combat MG",
+    -- [3686625920]  = "CLASS 4: Combat MG MK2",
+    -- [1627465347]  = "CLASS 4: Gusenberg",
+    -- [-1121678507] = "CLASS 2: Mini SMG",
+    -- [-1074790547] = "CLASS 3: Assaultrifle",
+    -- [961495388]   = "CLASS 3: Assaultrifle MK2",
+    -- [-2084633992] = "CLASS 3: Carbinerifle",
+    -- [4208062921]  = "CLASS 3: Carbinerifle MK2",
+    -- [-1357824103] = "CLASS 3: Advancedrifle",
+    -- [-1063057011] = "CLASS 3: Specialcarbine",
+    -- [2132975508]  = "CLASS 3: Bulluprifle",
+    -- [1649403952]  = "CLASS 3: Compactrifle",
+    -- [100416529]   = "CLASS 4: Sniperrifle",
+    -- [205991906]   = "CLASS 4: Heavy Sniper",
+    -- [177293209]   = "CLASS 4: Heavy Sniper MK2",
+    -- [-952879014]  = "CLASS 4: Marksmanrifle",
+    -- [487013001]   = "CLASS 2: Pumpshotgun",
+    -- [2017895192]  = "CLASS 2: Sawnoff Shotgun",
+    -- [-1654528753] = "CLASS 3: Bullupshotgun",
+    -- [-494615257]  = "CLASS 3: Assaultshotgun",
+    -- [-1466123874] = "CLASS 3: Musket",
+    -- [984333226]   = "CLASS 3: Heavyshotgun",
+    -- [-275439685]  = "CLASS 2: Doublebarrel Shotgun",
+    -- [317205821]   = "CLASS 2: Autoshotgun",
+    -- [-1568386805] = "CLASS 5: GRENADE LAUNCHER",
+    -- [-1312131151] = "CLASS 5: RPG",
+    -- [125959754]   = "CLASS 5: Compactlauncher"
 }
 
 function GetWeaponName()
     local currentWeapon = GetSelectedPedWeapon(cache.ped)
-    return weaponTable[currentWeapon] or "Unknown"
+    return weaponTable[currentWeapon] or "Ukjent Våpentype" -- Unknown
 end
