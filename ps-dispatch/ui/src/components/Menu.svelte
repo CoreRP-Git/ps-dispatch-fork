@@ -231,7 +231,7 @@
       <div class="flex items-center justify-between">
         <h1 class="text-white font-semibold text-[1.8vh] flex items-center gap-[1vh]">
           <i class="fas fa-radio text-blue-400 text-[1.6vh]"></i>
-          ACTIVE DISPATCHES
+          OPERASJONSSENTRAL
         </h1>
         <div class="text-blue-400 text-[1.2vh] font-mono">
           {$processedDispatchMenu?.length || 0}

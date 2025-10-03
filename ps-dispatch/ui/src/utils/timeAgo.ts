@@ -61,17 +61,17 @@ export function timeAgo(dateParam) {
   const isThisYear = today.getFullYear() === date.getFullYear();
 
   if (seconds < 5) {
-      return 'Just Now';
+      return 'Akkuratt nå';
   } else if (seconds < 60) {
-      return `${seconds} Seconds ago`;
+      return `${seconds} Sekunder siden`;
   } else if (seconds < 90) {
-      return 'A minute ago';
+      return 'Cirka ett minutt siden';
   } else if (minutes < 60) {
-      return `${minutes} Minutes ago`;
+      return `${minutes} Minutter siden`;
   } else if (isToday) {
-      return getFormattedDate(date, 'Today');
+      return getFormattedDate(date, 'I dag');
   } else if (isYesterday) {
-      return getFormattedDate(date, 'Yesterday');
+      return getFormattedDate(date, 'Forigårs');
   } else if (isThisYear) {
       return getFormattedDate(date, false, true);
   }
