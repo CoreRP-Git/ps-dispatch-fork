@@ -35,25 +35,25 @@
   function getDispatchData(dispatch) {
     if ($shortCalls) {
       return [
-        { label: 'Call', value: dispatch.data.message },
-        { icon: 'fas fa-comment', label: 'Information', value: dispatch.data.information },
+        { label: 'Innkommende Anrop', value: dispatch.data.message },
+        { icon: 'fas fa-comment', label: 'Info', value: dispatch.data.information },
       ];
     } else {
       return [
-      { icon: 'fas fa-clock', label: 'Time', value: timeAgo(dispatch.data.time) },
-      { icon: 'fas fa-user', label: 'Name', value: dispatch.data.name },
-      { icon: 'fas fa-phone', label: 'Number', value: dispatch.data.number },
-      { icon: 'fas fa-comment', label: 'Information', value: dispatch.data.information },
-      { icon: 'fas fa-map-location-dot', label: 'Street', value: dispatch.data.street },
-      { icon: 'fas fa-user', label: 'Gender', value: dispatch.data.gender },
-      { icon: 'fas fa-gun', label: 'Automatic Gun Fire', value: dispatch.data.automaticGunFire },
-      { icon: 'fas fa-gun', label: 'Weapon', value: dispatch.data.weapon },
-      { icon: 'fas fa-car', label: 'Vehicle', value: dispatch.data.vehicle },
-      { icon: 'fas fa-rectangle-list', label: 'Plate', value: dispatch.data.plate },
-      { icon: 'fas fa-droplet', label: 'Color', value: dispatch.data.color },
-      { icon: 'fas fa-car', label: 'Class', value: dispatch.data.class },
-      { icon: 'fas fa-door-open', label: 'Doors', value: dispatch.data.doors },
-      { icon: 'fas fa-compass', label: 'Heading', value: dispatch.data.heading },
+      { icon: 'fas fa-clock', label: 'Klokkeslett', value: timeAgo(dispatch.data.time) },
+      { icon: 'fas fa-user', label: 'Personalia', value: dispatch.data.name },
+      { icon: 'fas fa-phone', label: 'Mobiltelefon', value: dispatch.data.number },
+      { icon: 'fas fa-comment', label: 'Info', value: dispatch.data.information },
+      { icon: 'fas fa-map-location-dot', label: 'Posisjon', value: dispatch.data.street },
+      { icon: 'fas fa-user', label: 'Kjønn', value: dispatch.data.gender },
+      { icon: 'fas fa-gun', label: 'Automatisk skuddveksling', value: dispatch.data.automaticGunFire },
+      { icon: 'fas fa-gun', label: 'Våpentype', value: dispatch.data.weapon },
+      { icon: 'fas fa-car', label: 'Kjøretøymodell', value: dispatch.data.vehicle },
+      { icon: 'fas fa-rectangle-list', label: 'Skiltplate', value: dispatch.data.plate },
+      { icon: 'fas fa-droplet', label: 'Farge', value: dispatch.data.color },
+      { icon: 'fas fa-car', label: 'Klasse', value: dispatch.data.class },
+      { icon: 'fas fa-door-open', label: 'Dører', value: dispatch.data.doors },
+      { icon: 'fas fa-compass', label: 'Retning', value: dispatch.data.heading },
       ];
     }
   }
