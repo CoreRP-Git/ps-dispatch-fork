@@ -7,8 +7,22 @@
 	import Main from '@components/Main.svelte'
 
 	$RESOURCE_NAME  = 'ps-dispatch'
-</script>
 
+	const isEnvBrowser = () => {
+		return typeof window !== 'undefined';
+	}
+
+	let backgroundStyle = '';
+
+	if (isEnvBrowser()) {
+		backgroundStyle = `
+			background-image: url("https://i.imgur.com/3pzRj9n.png");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		`;
+	}
+</script>
 
 {#if $Locale}
 	<VisibilityProvider>
@@ -22,5 +36,7 @@
 
 {#if $BROWSER_MODE}
 	<DebugBrowser />
-	<body class="bg-neutral-700"></body>
 {/if}
+
+
+<div style={backgroundStyle} class="absolute inset-0 -z-10"></div>
